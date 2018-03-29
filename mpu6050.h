@@ -2,7 +2,7 @@
  *            mpu6050.h
  *
  *   Created on:  March 24, 2017
- *  Last Edited:  March 24, 2017
+ *  Last Edited:  March 28, 2017
  *       Author:  Nick Gorab
  *        
  *  This code is used for interfacing with the

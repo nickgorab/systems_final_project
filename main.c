@@ -9,7 +9,16 @@ sensdat_t sensor_data;
 
 
 
-/* Initializes the MPU6050 struct */
+/*
+ * Function: Data_Struct_Init
+ * --------------------------
+ * Initializes the data structure for the
+ * storage of the sensor data. 
+ *
+ * @param sensdat:	Pointer to the struct
+ * 					which is to be initialized.
+ */
+
 void Data_Struct_Init(sensdat_t* sendat) {
 
     sensdat = sensdat;
@@ -27,6 +36,20 @@ void Data_Struct_Init(sensdat_t* sendat) {
     return;
 }
 
+
+
+/*
+ * Function: Sensor_Connection_Test
+ * --------------------------------
+ * This is a function which will be able to 
+ * check both of the I2C devices used to make
+ * sure that they are functioning nominally.
+ * (Might want to add a flag.)
+ *
+ * @param sensdat:	Struct used as an argument
+ *					for the Get_ID functions.
+ */
+
 void Sensor_Connection_Test(sensdat_t* sensdat) {
     int connected = 0;
     while(1) {
@@ -39,8 +62,14 @@ void Sensor_Connection_Test(sensdat_t* sensdat) {
     }
 }
 
-
-int main(void)
+/*
+ * Function: main
+ * --------------
+ * The main function for the program which runs
+ * in a loop constantly.
+ */
+ 
+ int main(void)
 {
 
     WDTCTL = WDTPW | WDTHOLD;                     // Disables Watchdog Timer
